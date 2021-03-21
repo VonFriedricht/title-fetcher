@@ -15,7 +15,7 @@
     var title
     setInterval( () => {
         if( location.pathname == "/watch" ) {
-            title = JSON.stringify(document.title)
+            title = encodeURI(document.title)
             if(title != lastSend){
                 fetch(`https://vnft.cc/api/lucky/set/${title}`)
                 lastSend = title
