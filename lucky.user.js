@@ -15,10 +15,15 @@
     var title
     setInterval( () => {
         if( location.pathname == "/watch" ) {
-            title = encodeURI(document.title)
-            if(title != lastSend){
-                fetch(`https://vnft.cc/api/lucky/set/${title}`)
-                lastSend = title
+            try{
+                title = encodeURI(document.title.replace(/\//g,""))
+                if(title != lastSend){
+                    fetch(`https://vnft.cc/api/lucky/set/${title}`)
+                    lastSend = title
+                }
+            }
+            catch(err){
+                console.log(err)
             }
         }
     },1000)
