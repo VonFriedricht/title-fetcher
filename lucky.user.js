@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Title fetcher for Lucky
 // @namespace    http://vnft.cc
-// @version      0.1
+// @version      0.2
 // @description  gets the title of youtube video
 // @author       You
 // @match        https://www.youtube.com/*
