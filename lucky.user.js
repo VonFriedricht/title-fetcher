@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Title fetcher for Lucky
 // @namespace    http://vnft.cc
-// @version      0.2
+// @version      0.2.1
 // @description  gets the title of youtube video
 // @author       You
 // @match        https://www.youtube.com/*
@@ -16,7 +16,7 @@
     setInterval( () => {
         if( location.pathname == "/watch" ) {
             try{
-                title = encodeURI(document.title.replace(/\//g,""))
+                title = encodeURI(document.title.replace(/\//g,"%47"))
                 if(title != lastSend){
                     fetch(`https://vnft.cc/api/lucky/set/${title}`)
                     lastSend = title
